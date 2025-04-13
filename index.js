@@ -36,7 +36,7 @@ app.post('/api/lite', async (req, res) => {
     return res.status(400).json({ error: 'Missing email or URL' });
   }
   try {
-    const prompt = `Analyze ${url} for quick SEO wins. Provide 3-5 simple improvements (e.g., meta tags, load speed) in a concise bulleted list.`;
+    const prompt = `Analyze ${url} for quick Answer Engine Optimization wins. Provide 3-5 simple improvements (e.g., meta tags, load speed) in a concise bulleted list.`;
     const result = await callGrok(prompt);
     res.json({ result });
   } catch (error) {
