@@ -8,6 +8,11 @@ app.use(cors());
 
 const XAI_API_KEY = process.env.XAI_API_KEY;
 
+// Health check endpoint for Railway
+app.get('/', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
 async function callGrok(prompt) {
   const response = await fetch('https://api.x.ai/v1/chat/completions', {
     method: 'POST',
